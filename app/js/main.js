@@ -29,7 +29,9 @@ function isExternal(url) {
     var $link = $(this);
     if(isExternal($link.attr('href'))) {
       console.log('external link found: ' + $link.attr('href'));
-      $link.addClass('external-link');
+      $link.addClass('external-link').click(function(){
+        return confirm("Are you sure you want to leave this site?");
+      });
     }
   });
 
