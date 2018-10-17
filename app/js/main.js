@@ -4,6 +4,14 @@ function is_touch_device() {
       || (navigator.msMaxTouchPoints > 0));
 }
 
+// Check if URL is an external host
+function isExternal(url) {
+  var match = url.match(/^([^:\/?#]+:)?(?:\/\/([^\/?#]*))?([^?#]+)?(\?[^#]*)?(#.*)?/);
+  if (typeof match[1] === "string" && match[1].length > 0 && match[1].toLowerCase() !== location.protocol) return true;
+  if (typeof match[2] === "string" && match[2].length > 0 && match[2].replace(new RegExp(":("+{"http:":80,"https:":443}[location.protocol]+")?$"), "") !== location.host) return true;
+  return false;
+}
+
 
 
 (function() {
@@ -15,6 +23,15 @@ function is_touch_device() {
     $('body').toggleClass('menu-open');
   });
 
+
+  // identify all external links on the page
+  $('a').each(function(){
+    var $link = $(this);
+    if(isExternal($link.attr('href'))) {
+      console.log('external link found: ' + $link.attr('href'));
+      $link.addClass('external-link');
+    }
+  });
 
 
   // if on the member profile page, scroll to the selected member's section and close the menu
