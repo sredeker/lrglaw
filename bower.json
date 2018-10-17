@@ -1,0 +1,14 @@
+{
+  "name": "lrgr-law",
+  "version": "0.1.0",
+  "dependencies": {
+    "bootstrap": "~3.2.0",
+    "contentful": "~1.1.1",
+    "bower": "*",
+    "install": "~1.0.4",
+    "slick.js": "~1.5.3",
+    "susy": "~2.2.3",
+    "jquery-validation": "~1.13.1"
+  },
+  "private": true
+}

@@ -1,0 +1,6 @@
+AddHandler server-parsed .html
+
+
+
+AddHandler phpCGI .xml .php
+Action phpCGI /cgi-bin/php5.3fcgi
