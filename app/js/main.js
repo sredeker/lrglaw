@@ -30,7 +30,7 @@ function isExternal(url) {
     if(isExternal($link.attr('href'))) {
       console.log('external link found: ' + $link.attr('href'));
       $link.addClass('external-link').click(function(){
-        return confirm("Are you sure you want to leave this site?");
+        return confirm("Redirect Notice: You are now leaving the website of Lefkoff, Rubin, Gleason & Russo, P.C. Lefkoff, Rubin, Gleason & Russo, P.C. is not responsible for and has no control over content that appears beyond this point.");
       });
     }
   });
